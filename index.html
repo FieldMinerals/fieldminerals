@@ -4,41 +4,97 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Field Minerals — Site em Construção</title>
-  <!-- (Opcional) Favicon: envie um favicon.ico na raiz e descomente a linha abaixo -->
-  <!-- <link rel="icon" href="favicon.ico"> -->
+  <meta name="robots" content="noindex,nofollow" />
   <style>
     :root {
       --bg: #f7f9fb;
       --card: #ffffff;
       --text: #1f2937;
       --muted: #6b7280;
-      --accent: #0b5a7a;
+      --accent: #0b5a7a; /* ajuste para a cor institucional se desejar */
+      --border: #e5e7eb;
     }
-    * { box-sizing: border-box }
-    html, body { height: 100%; margin: 0; background: var(--bg); color: var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-    .wrap { min-height: 100%; display: grid; place-items: center; padding: 24px; }
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% 10%, #eef4f8 0, transparent 60%),
+        radial-gradient(1000px 500px at 90% 90%, #eef4f8 0, transparent 55%),
+        var(--bg);
+    }
+    .wrap {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
     .card {
-      width: 100%; max-width: 720px; background: var(--card); border: 1px solid #e5e7eb;
-      border-radius: 16px; padding: 40px 28px; text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+      width: 100%;
+      max-width: 760px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 28px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(0,0,0,.06);
     }
-    .logo { width: min(260px, 60vw); height: auto; margin: 0 auto 18px; display: block; object-fit: contain; }
-    h1 { font-size: clamp(22px, 2.6vw, 32px); margin: 8px 0 10px; color: var(--accent); font-weight: 700; }
-    p { font-size: clamp(15px, 1.9vw, 18px); color: var(--muted); margin: 0 0 18px; line-height: 1.6; }
-    footer { margin-top: 18px; font-size: 12px; color: #9ca3af; }
+    .logo {
+      width: min(280px, 65vw);
+      height: auto;
+      margin: 0 auto 18px;
+      display: block;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    h1 {
+      font-size: clamp(22px, 2.7vw, 34px);
+      margin: 10px 0 10px;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    p {
+      font-size: clamp(15px, 1.9vw, 18px);
+      color: var(--muted);
+      margin: 0 0 18px;
+      line-height: 1.65;
+    }
+    .contact {
+      margin-top: 8px;
+      font-size: 15px;
+    }
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dashed currentColor;
+    }
+    footer {
+      margin-top: 18px;
+      font-size: 12px;
+      color: #9ca3af;
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="card" role="status" aria-live="polite">
-      <!-- Ajuste o caminho se necessário. Ex.: "logo.png" se estiver na raiz -->
-      <img class="logo" src="assets/logo.png" alt="Field Minerals - Logomarca">
+      <!-- O arquivo Logo.png está na raiz do repositório -->
+      <img class="logo" src="./Logo.png" alt="Field Minerals - logotipo" loading="eager" />
       <h1>🚧 Site em Construção</h1>
       <p>Estamos trabalhando para trazer novidades em breve.</p>
+
+      <!-- (Opcional) Contato institucional
+      <p class="contact">
+        Fale conosco: <a href="mailto:contato@fieldminerals.com.br">contato@fieldminerals.com.br</a>
+      </p>
+      -->
+
       <footer>© <span id="y"></span> Field Minerals. Todos os direitos reservados.</footer>
     </section>
   </main>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+  <script>
+    // Atualiza o ano automaticamente
+    document.getElementById('y').textContent = new Date().getFullYear();
